@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le mathématicien complètement dans les patates — Les Nano-Éditions d'Archéus</title>
+<meta name="description" content="Un mathématicien à la retraite découvre des patates bioluminescentes qui communiquent depuis l'espace. Un roman de Pierre Duchesne, relié à la main par Les Nano-Éditions d'Archéus.">
+<meta property="og:title" content="Le mathématicien complètement dans les patates">
+<meta property="og:description" content="Des patates qui s'allument dans le noir, et un message qui ne vient pas d'ici. Un roman de Pierre Duchesne, relié à la main.">
+<meta property="og:type" content="book">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2318120D'/%3E%3Cellipse cx='16' cy='18' rx='11' ry='7' fill='%23FF6F9C' opacity='0.85'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Literata:opsz,wght@7..72,400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terre:#18120D;
+    --terre-clair:#2A2018;
+    --hartem:#F3E8D6;
+    --hartem-ombre:#E4D6BC;
+    --lueur:#FF6F9C;
+    --vert-foret:#2E4A3A;
+    --vin-roseval:#6F2436;
+    --toile-terre:#6B4A2E;
+    --encre:#211912;
+    --display: 'Fraunces', serif;
+    --corps: 'Literata', serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family: var(--corps);
+    background: var(--hartem);
+    color: var(--encre);
+    line-height:1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color:inherit; }
+
+  :focus-visible{
+    outline: 3px solid var(--lueur);
+    outline-offset: 3px;
+  }
+
+  img, svg{ display:block; max-width:100%; }
+
+  .conteneur{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.9rem;
+  }
+
+  h1, h2, h3{
+    font-family: var(--display);
+    font-weight: 600;
+    line-height: 1.08;
+  }
+
+  /* ---------- NAVIGATION ---------- */
+  .nav{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(24,18,13,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--terre-clair);
+  }
+  .nav .conteneur{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0.9rem 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .nav-logo{
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--hartem);
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
+  }
+  .nav-liens{
+    display:flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+  }
+  .nav-liens a{
+    color: var(--hartem);
+    text-decoration: none;
+    opacity: 0.8;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: opacity .2s, border-color .2s;
+  }
+  .nav-liens a:hover{ opacity: 1; border-color: var(--lueur); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background: var(--terre);
+    color: var(--hartem);
+    padding: 4.5rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .conteneur{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.4rem;
+  }
+  .hero .eyebrow{ color: var(--lueur); opacity: 0.9; }
+  .hero h1{
+    font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+    max-width: 16ch;
+  }
+  .hero .accroche{
+    font-family: var(--corps);
+    font-style: italic;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    max-width: 38ch;
+    opacity: 0.92;
+  }
+  .hero .auteur{
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+
+  .ctas{
+    display:flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-top: 0.6rem;
+  }
+  .bouton{
+    display:inline-block;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    padding: 0.85rem 1.5rem;
+    border-radius: 2px;
+    text-decoration:none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .bouton-principal{
+    background: var(--lueur);
+    color: var(--terre);
+    box-shadow: 0 0 0 1px var(--lueur);
+  }
+  .bouton-principal:hover{ transform: translateY(-2px); box-shadow: 0 6px 18px -6px var(--lueur); }
+  .bouton-secondaire{
+    background: transparent;
+    color: var(--hartem);
+    box-shadow: 0 0 0 1px var(--terre-clair);
+  }
+  .bouton-secondaire:hover{ box-shadow: 0 0 0 1px var(--lueur); transform: translateY(-2px); }
+
+  /* ---------- SIGNATURE : la patate lumineuse ---------- */
+  .signature{
+    position: relative;
+    width: 220px;
+    height: 150px;
+    margin: 1.2rem 0;
+  }
+  .patate{
+    position:absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 96px;
+    background: linear-gradient(155deg, #3C2C1C 0%, #2A1F14 70%);
+    border-radius: 48% 42% 55% 45% / 58% 50% 48% 52%;
+    box-shadow:
+      0 0 40px 6px rgba(255,111,156,0.25),
+      inset 6px -8px 18px rgba(0,0,0,0.5);
+    animation: respirer 4.5s ease-in-out infinite;
+  }
+  .fissure{
+    position:absolute;
+    background: var(--lueur);
+    border-radius: 2px;
+    filter: blur(0.5px);
+    box-shadow: 0 0 8px 2px var(--lueur);
+  }
+  .fissure-1{ width:38px; height:3px; top:38px; left:38px; transform:rotate(18deg); }
+  .fissure-2{ width:24px; height:2.5px; top:58px; left:88px; transform:rotate(-12deg); }
+  .fissure-3{ width:16px; height:2px; top:30px; left:104px; transform:rotate(40deg); }
+
+  .blip{
+    position:absolute;
+    width: 5px; height:5px;
+    border-radius: 50%;
+    background: var(--lueur);
+    box-shadow: 0 0 10px 3px var(--lueur);
+    opacity: 0;
+    animation: clignoter 3.2s ease-in-out infinite;
+  }
+  .blip:nth-child(4){ left: 70px; top: 8px; animation-delay: 0s; }
+  .blip:nth-child(5){ left: 110px; top: 22px; animation-delay: .35s; }
+  .blip:nth-child(6){ left: 140px; top: 4px; animation-delay: .9s; }
+  .blip:nth-child(7){ left: 95px; top: -8px; animation-delay: 1.5s; }
+
+  @keyframes respirer{
+    0%, 100%{ box-shadow: 0 0 40px 6px rgba(255,111,156,0.22), inset 6px -8px 18px rgba(0,0,0,0.5); }
+    50%{ box-shadow: 0 0 56px 12px rgba(255,111,156,0.4), inset 6px -8px 18px rgba(0,0,0,0.5); }
+  }
+  @keyframes clignoter{
+    0%, 70%, 100%{ opacity: 0; transform: translateY(0); }
+    8%, 22%{ opacity: 1; transform: translateY(-6px); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .patate, .blip{ animation: none !important; }
+    .patate{ box-shadow: 0 0 40px 6px rgba(255,111,156,0.3), inset 6px -8px 18px rgba(0,0,0,0.5); }
+    .blip{ opacity: 0.6; }
+  }
+
+  /* ---------- SECTIONS GÉNÉRIQUES ---------- */
+  section{ padding: 4.5rem 0; }
+  .fond-clair{ background: var(--hartem); color: var(--encre); }
+  .fond-sombre{ background: var(--terre); color: var(--hartem); }
+
+  .entete-section{ max-width: 46ch; margin-bottom: 2.4rem; }
+  .entete-section h2{ font-size: clamp(1.6rem, 3.4vw, 2.3rem); }
+  .fond-sombre .eyebrow{ color: var(--lueur); }
+
+  .texte-large{ max-width: 62ch; }
+  .texte-large p + p{ margin-top: 1rem; }
+
+  /* ---------- GRILLE OBJET ---------- */
+  .grille-objet{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    margin-top: 2rem;
+  }
+  .carte-objet{
+    border: 1px solid var(--terre-clair);
+    padding: 1.5rem;
+    border-radius: 3px;
+  }
+  .carte-objet h3{
+    font-size: 1rem;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--lueur);
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+  }
+  .carte-objet p{ font-size: 0.95rem; opacity: 0.9; }
+
+  .swatches{ display:flex; gap: 0.8rem; margin-top: 0.8rem; flex-wrap: wrap; }
+  .swatch{
+    display:flex; align-items:center; gap: 0.5rem;
+    font-family: var(--mono); font-size: 0.78rem;
+  }
+  .swatch-couleur{
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(243,232,214,0.3);
+  }
+
+  /* ---------- ÉDITIONS ---------- */
+  .grille-editions{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    margin-top: 1rem;
+  }
+  .carte-edition{
+    background: #fff;
+    border: 1px solid var(--hartem-ombre);
+    border-radius: 4px;
+    overflow:hidden;
+  }
+  .carte-edition-toile{
+    height: 90px;
+  }
+  .toile-foret{ background: linear-gradient(135deg, var(--vert-foret), #1F352A); }
+  .toile-roseval{ background: linear-gradient(135deg, var(--vin-roseval), #4D1623); }
+  .toile-terre{ background: linear-gradient(135deg, var(--toile-terre), #3A2A1A); }
+  .carte-edition-corps{ padding: 1.4rem 1.5rem 1.6rem; }
+  .carte-edition h3{ font-size: 1.25rem; margin-bottom: 0.3rem; }
+  .statut{
+    display:inline-block;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+    background: var(--hartem);
+    margin-top: 0.6rem;
+  }
+  .note-editions{
+    margin-top: 1.6rem;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    max-width: 50ch;
+  }
+
+  /* ---------- TÉLÉCHARGEMENT ---------- */
+  .fiche-technique{
+    margin-top: 2.2rem;
+    border-top: 1px solid var(--terre-clair);
+    padding-top: 1.6rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+  }
+  .fiche-technique dl{
+    display:grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1.2rem;
+  }
+  .fiche-technique dt{ opacity: 0.6; }
+  .fiche-technique dd{ opacity: 0.95; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background: var(--terre);
+    color: var(--hartem);
+    padding: 2.4rem 0;
+    border-top: 1px solid var(--terre-clair);
+  }
+  footer .conteneur{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .grille-editions{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 700px){
+    .grille-objet, .grille-editions{ grid-template-columns: 1fr; }
+    .nav-liens{ font-size: 0.76rem; gap: 0.9rem; }
+    section{ padding: 3.2rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="conteneur">
+    <span class="nav-logo">Archéus</span>
+    <div class="nav-liens">
+      <a href="#histoire">Histoire</a>
+      <a href="#objet">L'objet</a>
+      <a href="#editions">Éditions</a>
+      <a href="#lire">Lire&nbsp;gratuitement</a>
+      <a href="#maison">La maison</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="conteneur">
+    <p class="eyebrow">Les Nano-Éditions d'Archéus présentent</p>
+    <h1>Le mathématicien complètement dans les patates</h1>
+
+    <div class="signature" aria-hidden="true">
+      <div class="patate">
+        <div class="fissure fissure-1"></div>
+        <div class="fissure fissure-2"></div>
+        <div class="fissure fissure-3"></div>
+      </div>
+      <span class="blip"></span><span class="blip"></span><span class="blip"></span><span class="blip"></span>
+    </div>
+
+    <p class="accroche">Un retraité. Des patates qui s'allument dans le noir. Et un message qui ne vient pas d'ici.</p>
+    <p class="auteur">Un roman de Pierre Duchesne — relié à la main, à l'exemplaire</p>
+
+    <div class="ctas">
+      <a class="bouton bouton-principal" href="#lire">Lire gratuitement</a>
+      <a class="bouton bouton-secondaire" href="#editions">Réserver un exemplaire papier</a>
+    </div>
+  </div>
+</header>
+
+<section class="fond-clair" id="histoire">
+  <div class="conteneur">
+    <div class="entete-section">
+      <p class="eyebrow">L'histoire</p>
+      <h2>Une retraite, interrompue par le potager</h2>
+    </div>
+    <div class="texte-large">
+      <p>Il avait rangé ses livres de mathématiques pour s'occuper d'un carré de terre. Puis une de ses patates s'est mise à briller — pas d'un éclat ordinaire, mais d'une lumière qui clignote, qui se répète, qui essaie visiblement de dire quelque chose.</p>
+      <p><em>Le mathématicien complètement dans les patates</em> suit cette enquête improbable&nbsp;: déchiffrer un message extraterrestre logé dans un légume-racine, sans jamais quitter son jardin. Une histoire pour les enfants qui posent trop de questions — et pour les adultes qui ont arrêté d'en poser.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fond-sombre" id="objet">
+  <div class="conteneur">
+    <div class="entete-section">
+      <p class="eyebrow">L'objet</p>
+      <h2>Chaque exemplaire est cousu, pas collé</h2>
+    </div>
+    <p class="texte-large">Aucune presse industrielle ici. Chaque livre passe par les mêmes mains, du pliage du papier à la dernière couture.</p>
+
+    <div class="grille-objet">
+      <div class="carte-objet">
+        <h3>Reliure à plats cousus</h3>
+        <p>Les cahiers sont pliés et cousus à la main&nbsp;; les cartons de couverture sont intégrés sans excès de colle, pour un toucher souple et coussiné.</p>
+      </div>
+      <div class="carte-objet">
+        <h3>Toile au choix</h3>
+        <p>Plusieurs couleurs de toile, une seule histoire.</p>
+        <div class="swatches">
+          <span class="swatch"><span class="swatch-couleur" style="background:var(--vert-foret)"></span>Vert Forêt</span>
+          <span class="swatch"><span class="swatch-couleur" style="background:var(--vin-roseval)"></span>Rouge Vin</span>
+          <span class="swatch"><span class="swatch-couleur" style="background:var(--toile-terre)"></span>Terre</span>
+        </div>
+      </div>
+      <div class="carte-objet">
+        <h3>Papier choisi</h3>
+        <p>Intérieur à grain long pour un dos qui ouvre bien à plat&nbsp;; dos et pièces de titre en papier aquarelle pré-courbé à la main.</p>
+      </div>
+      <div class="carte-objet">
+        <h3>Tirage numéroté</h3>
+        <p>Une vingtaine d'exemplaires numérotés, suivis d'un tirage à la demande, non numéroté.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fond-clair" id="editions">
+  <div class="conteneur">
+    <div class="entete-section">
+      <p class="eyebrow">Les éditions</p>
+      <h2>Plusieurs toiles, une seule histoire</h2>
+    </div>
+
+    <div class="grille-editions">
+      <div class="carte-edition">
+        <div class="carte-edition-toile toile-foret"></div>
+        <div class="carte-edition-corps">
+          <h3>Édition Standard</h3>
+          <p>Toile Vert Forêt — l'édition de référence, sobre et durable.</p>
+          <span class="statut">Tirage en cours</span>
+        </div>
+      </div>
+      <div class="carte-edition">
+        <div class="carte-edition-toile toile-roseval"></div>
+        <div class="carte-edition-corps">
+          <h3>Édition Roseval</h3>
+          <p>Toile Rouge Vin — un clin d'œil à la patate Roseval, la vraie, celle du potager.</p>
+          <span class="statut">Tirage en cours</span>
+        </div>
+      </div>
+      <div class="carte-edition">
+        <div class="carte-edition-toile toile-terre"></div>
+        <div class="carte-edition-corps">
+          <h3>Édition Terre</h3>
+          <p>Toile brune — la couleur du sol d'où tout est parti.</p>
+          <span class="statut">À confirmer</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="note-editions">Les prix et les modalités de réservation seront annoncés à la sortie du tirage.</p>
+    <div class="ctas" style="justify-content:flex-start; margin-top:1rem;">
+      <a class="bouton bouton-secondaire" style="box-shadow:0 0 0 1px var(--encre); color:var(--encre);" href="mailto:nano.editions.archeus@gmail.com?subject=Être%20averti%20de%20la%20sortie%20du%20tirage">Être averti·e à la sortie</a>
+    </div>
+  </div>
+</section>
+
+<section class="fond-sombre" id="lire">
+  <div class="conteneur">
+    <div class="entete-section">
+      <p class="eyebrow">Lire gratuitement</p>
+      <h2>Le texte numérique, gratuit, pour toujours</h2>
+    </div>
+    <p class="texte-large">Le PDF et l'EPUB sont offerts sans contrepartie. Si vous préférez l'objet — relié, cousu, en papier — il reste disponible séparément.</p>
+
+    <div class="ctas" style="justify-content:flex-start;">
+      <!-- TODO : remplacer VOTRE-USERNAME/VOTRE-REPO par le vrai dépôt GitHub une fois les fichiers déposés dans Releases -->
+      <a class="bouton bouton-principal" href="https://github.com/VOTRE-USERNAME/VOTRE-REPO/releases/latest" target="_blank" rel="noopener">Télécharger le PDF</a>
+      <a class="bouton bouton-secondaire" href="https://github.com/VOTRE-USERNAME/VOTRE-REPO/releases/latest" target="_blank" rel="noopener">Télécharger l'EPUB</a>
+    </div>
+
+    <div class="fiche-technique">
+      <dl>
+        <dt>ISBN (papier)</dt><dd>978-2-9825052-0-9</dd>
+        <dt>ISBN (PDF)</dt><dd>978-2-9825052-1-6</dd>
+        <dt>ISBN (EPUB)</dt><dd>978-2-9825052-2-3</dd>
+        <dt>Dépôt légal</dt><dd>2<sup>e</sup> trimestre 2026 — BAnQ / BAC</dd>
+        <dt>Édition</dt><dd>Les Nano-Éditions d'Archéus</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="fond-clair" id="maison">
+  <div class="conteneur">
+    <div class="entete-section">
+      <p class="eyebrow">La maison</p>
+      <h2>Les Nano-Éditions d'Archéus</h2>
+    </div>
+    <div class="texte-large">
+      <p>Une maison d'édition artisanale, minuscule par choix&nbsp;: la mise en page, l'impression et la reliure se font dans un seul atelier, à la main. Aucune étape n'est sous-traitée.</p>
+      <p><em>Le mathématicien complètement dans les patates</em> est le premier titre de la maison. D'autres suivront.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="conteneur">
+    <span>Les Nano-Éditions d'Archéus · Québec</span>
+    <span><a href="mailto:nano.editions.archeus@gmail.com">nano.editions.archeus@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
