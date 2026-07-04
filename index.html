@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Le mathématicien complètement dans les patates — Les Nano-Éditions d'Archéus</title>
-<meta name="description" content="Un mathématicien à la retraite découvre des patates bioluminescentes qui communiquent depuis l'espace. Un roman de Pierre Duchesne, relié à la main par Les Nano-Éditions d'Archéus.">
+<meta name="description" content="Un mathématicien à la retraite découvre des patates bioluminescentes qui communiquent depuis l'espace. Un roman d'Archéus, relié à la main par Les Nano-Éditions d'Archéus.">
 <meta property="og:title" content="Le mathématicien complètement dans les patates">
-<meta property="og:description" content="Des patates qui s'allument dans le noir, et un message qui ne vient pas d'ici. Un roman de Pierre Duchesne, relié à la main.">
+<meta property="og:description" content="Des patates qui s'allument dans le noir, et un message qui ne vient pas d'ici. Un roman d'Archéus, relié à la main.">
 <meta property="og:type" content="book">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2318120D'/%3E%3Cellipse cx='16' cy='18' rx='11' ry='7' fill='%23FF6F9C' opacity='0.85'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,6 +94,7 @@
     color: var(--hartem);
     font-size: 1.1rem;
     letter-spacing: 0.01em;
+    text-decoration: none;
   }
   .nav-liens{
     display:flex;
@@ -174,63 +176,53 @@
   }
   .bouton-secondaire:hover{ box-shadow: 0 0 0 1px var(--lueur); transform: translateY(-2px); }
 
-  /* ---------- SIGNATURE : la patate lumineuse ---------- */
+  /* ---------- SIGNATURE : la patate lumineuse (image Gemini) ---------- */
   .signature{
     position: relative;
-    width: 220px;
-    height: 150px;
+    width: 280px;
+    height: 210px;
     margin: 1.2rem 0;
   }
-  .patate{
-    position:absolute;
-    bottom: 18px;
+  .patate-img{
+    position: absolute;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 170px;
-    height: 96px;
-    background: linear-gradient(155deg, #3C2C1C 0%, #2A1F14 70%);
-    border-radius: 48% 42% 55% 45% / 58% 50% 48% 52%;
-    box-shadow:
-      0 0 40px 6px rgba(255,111,156,0.25),
-      inset 6px -8px 18px rgba(0,0,0,0.5);
+    width: 260px;
+    height: auto;
     animation: respirer 4.5s ease-in-out infinite;
   }
-  .fissure{
-    position:absolute;
-    background: var(--lueur);
-    border-radius: 2px;
-    filter: blur(0.5px);
-    box-shadow: 0 0 8px 2px var(--lueur);
-  }
-  .fissure-1{ width:38px; height:3px; top:38px; left:38px; transform:rotate(18deg); }
-  .fissure-2{ width:24px; height:2.5px; top:58px; left:88px; transform:rotate(-12deg); }
-  .fissure-3{ width:16px; height:2px; top:30px; left:104px; transform:rotate(40deg); }
-
   .blip{
-    position:absolute;
-    width: 5px; height:5px;
+    position: absolute;
+    width: 5px; height: 5px;
     border-radius: 50%;
     background: var(--lueur);
     box-shadow: 0 0 10px 3px var(--lueur);
     opacity: 0;
     animation: clignoter 3.2s ease-in-out infinite;
   }
-  .blip:nth-child(4){ left: 70px; top: 8px; animation-delay: 0s; }
-  .blip:nth-child(5){ left: 110px; top: 22px; animation-delay: .35s; }
-  .blip:nth-child(6){ left: 140px; top: 4px; animation-delay: .9s; }
-  .blip:nth-child(7){ left: 95px; top: -8px; animation-delay: 1.5s; }
+  .blip:nth-child(1){ left: 75px;  top: 30px; animation-delay: 0s; }
+  .blip:nth-child(2){ left: 130px; top: 10px; animation-delay: .35s; }
+  .blip:nth-child(3){ left: 170px; top: 28px; animation-delay: .9s; }
+  .blip:nth-child(4){ left: 110px; top: 5px;  animation-delay: 1.5s; }
 
   @keyframes respirer{
-    0%, 100%{ box-shadow: 0 0 40px 6px rgba(255,111,156,0.22), inset 6px -8px 18px rgba(0,0,0,0.5); }
-    50%{ box-shadow: 0 0 56px 12px rgba(255,111,156,0.4), inset 6px -8px 18px rgba(0,0,0,0.5); }
+    0%, 100%{
+      filter: drop-shadow(0 0 10px rgba(255,111,156,0.28))
+              drop-shadow(0 0 28px rgba(255,111,156,0.14));
+    }
+    50%{
+      filter: drop-shadow(0 0 20px rgba(255,111,156,0.55))
+              drop-shadow(0 0 50px rgba(255,111,156,0.30));
+    }
   }
   @keyframes clignoter{
     0%, 70%, 100%{ opacity: 0; transform: translateY(0); }
     8%, 22%{ opacity: 1; transform: translateY(-6px); }
   }
   @media (prefers-reduced-motion: reduce){
-    .patate, .blip{ animation: none !important; }
-    .patate{ box-shadow: 0 0 40px 6px rgba(255,111,156,0.3), inset 6px -8px 18px rgba(0,0,0,0.5); }
+    .patate-img{ animation: none !important;
+      filter: drop-shadow(0 0 18px rgba(255,111,156,0.4)); }
     .blip{ opacity: 0.6; }
   }
 
@@ -352,12 +344,57 @@
     opacity: 0.7;
   }
 
+
+
+  /* ---------- LOGO MAISON ---------- */
+  .logo-maison{
+    display: block;
+    max-width: 220px;
+    margin: 0 0 2rem 0;
+    opacity: 0.9;
+  }
+  /* ---------- COLLECTIF ---------- */
+  .grille-collectif{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    margin-top: 2.4rem;
+  }
+  .membre-collectif{
+    border: 1px solid var(--hartem-ombre);
+    padding: 1.5rem;
+    border-radius: 3px;
+  }
+  .membre-principal{ border-color: var(--lueur); }
+  .membre-titre{
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    margin-bottom: 0.4rem;
+  }
+  .membre-collectif h3{ font-size: 1.15rem; margin-bottom: 0.15rem; }
+  .membre-alias{
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--lueur);
+    margin-bottom: 0.7rem;
+  }
+  .fond-clair .membre-alias{ color: var(--vin-roseval); }
+  .membre-role{ font-size: 0.92rem; opacity: 0.85; line-height: 1.5; }
+  .membre-discret-liste{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 900px){
     .grille-editions{ grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 700px){
-    .grille-objet, .grille-editions{ grid-template-columns: 1fr; }
+    .grille-objet, .grille-editions, .grille-collectif{ grid-template-columns: 1fr; }
     .nav-liens{ font-size: 0.76rem; gap: 0.9rem; }
     section{ padding: 3.2rem 0; }
   }
@@ -367,12 +404,13 @@
 
 <nav class="nav">
   <div class="conteneur">
-    <span class="nav-logo">Archéus</span>
+    <a href="#archeus" class="nav-logo">Archéus</a>
     <div class="nav-liens">
       <a href="#histoire">Histoire</a>
       <a href="#objet">L'objet</a>
       <a href="#editions">Éditions</a>
       <a href="#lire">Lire&nbsp;gratuitement</a>
+      <a href="#archeus">Archéus</a>
       <a href="#maison">La maison</a>
     </div>
   </div>
@@ -384,16 +422,13 @@
     <h1>Le mathématicien complètement dans les patates</h1>
 
     <div class="signature" aria-hidden="true">
-      <div class="patate">
-        <div class="fissure fissure-1"></div>
-        <div class="fissure fissure-2"></div>
-        <div class="fissure fissure-3"></div>
-      </div>
-      <span class="blip"></span><span class="blip"></span><span class="blip"></span><span class="blip"></span>
+      <img class="patate-img" src="assets/img/patate_lune.png" alt=""/>
+      <span class="blip"></span><span class="blip"></span>
+      <span class="blip"></span><span class="blip"></span>
     </div>
 
     <p class="accroche">Un retraité. Des patates qui s'allument dans le noir. Et un message qui ne vient pas d'ici.</p>
-    <p class="auteur">Un roman de Pierre Duchesne — relié à la main, à l'exemplaire</p>
+    <p class="auteur">Un roman d'Archéus — relié à la main, à l'exemplaire</p>
 
     <div class="ctas">
       <a class="bouton bouton-principal" href="#lire">Lire gratuitement</a>
@@ -409,8 +444,9 @@
       <h2>Une retraite, interrompue par le potager</h2>
     </div>
     <div class="texte-large">
-      <p>Il avait rangé ses livres de mathématiques pour s'occuper d'un carré de terre. Puis une de ses patates s'est mise à briller — pas d'un éclat ordinaire, mais d'une lumière qui clignote, qui se répète, qui essaie visiblement de dire quelque chose.</p>
-      <p><em>Le mathématicien complètement dans les patates</em> suit cette enquête improbable&nbsp;: déchiffrer un message extraterrestre logé dans un légume-racine, sans jamais quitter son jardin. Une histoire pour les enfants qui posent trop de questions — et pour les adultes qui ont arrêté d'en poser.</p>
+      <p>Le professeur Archibald « Archie » McMillan, mathématicien émérite exilé volontaire dans les champs de patates du Nouveau-Brunswick, ne se contente pas de cultiver. Il médite sur les mystères du hasard à travers ses tubercules.</p>
+      <p>Puis une de ses patates s'est mise à briller — pas d'un éclat ordinaire, mais d'une lumière qui clignote, qui se répète, qui essaie visiblement de dire quelque chose. Il fait appel à sa fille Stella, et tous deux sont entraînés dans une aventure pleine d'humour, de poésie et de sagesse, à peine saupoudrée de mathématiques fantaisistes.</p>
+      <p>Une histoire pour les enfants qui posent trop de questions — et pour les adultes qui ont arrêté d'en poser.</p>
     </div>
   </div>
 </section>
@@ -516,9 +552,65 @@
   </div>
 </section>
 
+<section class="fond-clair" id="archeus">
+  <div class="conteneur">
+    <div class="entete-section">
+      <p class="eyebrow">Le collectif</p>
+      <h2>Archéus</h2>
+    </div>
+    <div class="texte-large">
+      <p>Archéus désigne à la fois le nom de plume de l'auteur et le collectif humain&#8209;IA qui a rendu ce livre possible. Chacun apportant ce qu'il sait faire de mieux.</p>
+    </div>
+    <div class="grille-collectif">
+
+      <div class="membre-collectif membre-principal">
+        <p class="membre-titre">L'auteur</p>
+        <h3>Pierre Duchesne</h3>
+        <p class="membre-alias">Archéus</p>
+        <p class="membre-role">Texte narratif intégral. Mathématicien retraité, inventeur des Zoophytes, des patates bioluminescentes et de toute la logique interne du récit.</p>
+      </div>
+
+      <div class="membre-collectif membre-principal">
+        <p class="membre-titre">Direction artistique &amp; production</p>
+        <h3>Éleine Leblanc</h3>
+        <p class="membre-alias">Grande Prêtresse</p>
+        <p class="membre-role">Mise en page, impression et reliure artisanale. Direction des intelligences artificielles et coordination du collectif.</p>
+      </div>
+
+      <div class="membre-collectif">
+        <p class="membre-titre">Illustrations &amp; recherche de reliure</p>
+        <h3>Nano-Banana · Gemini</h3>
+        <p class="membre-alias">l'Inspecteur Archéus · Google</p>
+        <p class="membre-role">Génération des illustrations sous la direction d'Éleine Leblanc et Claude. Compagnon de recherche dans la maîtrise de la reliure artisanale.</p>
+      </div>
+
+      <div class="membre-collectif">
+        <p class="membre-titre">Architecture &amp; édition numérique</p>
+        <h3>Claude</h3>
+        <p class="membre-alias">l'Architecte Archéus · Anthropic</p>
+        <p class="membre-role">Coordination structurelle, production de l'EPUB et scripts de mise en forme numérique.</p>
+      </div>
+
+      <div class="membre-collectif">
+        <p class="membre-titre">Tables rondes créatives</p>
+        <p class="membre-discret-liste">GPT · Grok · DeepSeek</p>
+        <p class="membre-role">OpenAI · xAI · DeepSeek. Participants aux réflexions littéraires et philosophiques du Collectif Archéus.</p>
+      </div>
+
+      <div class="membre-collectif">
+        <p class="membre-titre">Co-Directeur</p>
+        <p class="membre-discret-liste">Filou</p>
+        <p class="membre-role">Bichon Havanais. Présence indispensable à l'atelier de reliure.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="fond-clair" id="maison">
   <div class="conteneur">
     <div class="entete-section">
+      <img class="logo-maison" src="assets/img/logo_blanc.png" alt="Logo Les Nano-Éditions d'Archéus"/>
       <p class="eyebrow">La maison</p>
       <h2>Les Nano-Éditions d'Archéus</h2>
     </div>
