@@ -25,282 +25,75 @@
     --corps: 'Literata', serif;
     --mono: 'IBM Plex Mono', monospace;
   }
-
   *{ margin:0; padding:0; box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
-  body{
-    font-family: var(--corps);
-    background: var(--terre);
-    color: var(--hartem);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+  body{ font-family: var(--corps); background: var(--terre); color: var(--hartem); line-height: 1.6; -webkit-font-smoothing: antialiased; }
   a{ color: inherit; }
   img, svg{ display:block; max-width:100%; }
   :focus-visible{ outline: 3px solid var(--braise); outline-offset: 3px; }
-
-  .conteneur{
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .eyebrow{
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    opacity: 0.75;
-    margin-bottom: 0.9rem;
-    color: var(--braise-doux);
-  }
-
+  .conteneur{ max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+  .eyebrow{ font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.75; margin-bottom: 0.9rem; color: var(--braise-doux); }
   h1, h2, h3{ font-family: var(--display); font-weight: 600; line-height: 1.08; }
-
-  /* ---------- NAV ---------- */
-  .nav{
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: rgba(24,18,13,0.94);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--terre-clair);
-  }
-  .nav .conteneur{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.9rem 1.5rem;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .nav-logo{
-    font-family: var(--display);
-    font-weight: 700;
-    color: var(--hartem);
-    font-size: 1.1rem;
-    text-decoration: none;
-  }
-  .nav-liens{
-    display: flex;
-    gap: 1.4rem;
-    flex-wrap: wrap;
-    font-family: var(--mono);
-    font-size: 0.82rem;
-  }
-  .nav-liens a{
-    color: var(--hartem);
-    text-decoration: none;
-    opacity: 0.75;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-    transition: opacity .2s, border-color .2s;
-  }
+  .nav{ position: sticky; top: 0; z-index: 20; background: rgba(24,18,13,0.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--terre-clair); }
+  .nav .conteneur{ display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.5rem; gap: 1rem; flex-wrap: wrap; }
+  .nav-logo{ font-family: var(--display); font-weight: 700; color: var(--hartem); font-size: 1.1rem; text-decoration: none; }
+  .nav-liens{ display: flex; gap: 1.4rem; flex-wrap: wrap; font-family: var(--mono); font-size: 0.82rem; }
+  .nav-liens a{ color: var(--hartem); text-decoration: none; opacity: 0.75; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: opacity .2s, border-color .2s; }
   .nav-liens a:hover{ opacity: 1; border-color: var(--braise); }
-  .nav-retour{
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    color: var(--braise-doux);
-    text-decoration: none;
-    opacity: 0.9;
-    letter-spacing: 0.05em;
-  }
+  .nav-retour{ font-family: var(--mono); font-size: 0.82rem; color: var(--braise-doux); text-decoration: none; opacity: 0.9; letter-spacing: 0.05em; }
   .nav-retour:hover{ opacity: 1; }
-
-  /* ---------- HERO ---------- */
-  .hero-clairiere{
-    position: relative;
-    width: 100%;
-    min-height: 420px;
-    background: var(--terre);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-clairiere img{
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.85;
-  }
-  .hero-contenu{
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 5rem 1.5rem 4rem;
-    max-width: 700px;
-  }
+  .hero-clairiere{ position: relative; width: 100%; min-height: 420px; background: var(--terre); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .hero-clairiere img{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.85; }
+  .hero-contenu{ position: relative; z-index: 2; text-align: center; padding: 5rem 1.5rem 4rem; max-width: 700px; }
   .hero-contenu .eyebrow{ color: var(--braise-doux); opacity: 1; }
-  .hero-contenu h1{
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    color: var(--hartem);
-    text-shadow: 0 2px 24px rgba(24,18,13,0.9), 0 0 60px rgba(24,18,13,0.8);
-    margin-bottom: 1rem;
-  }
-  .hero-contenu .accroche{
-    font-family: var(--corps);
-    font-style: italic;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--hartem);
-    opacity: 0.88;
-    text-shadow: 0 1px 12px rgba(24,18,13,0.95);
-    max-width: 42ch;
-    margin: 0 auto;
-  }
-
-  /* ---------- SECTIONS ---------- */
+  .hero-contenu h1{ font-size: clamp(2rem, 5vw, 3.4rem); color: var(--hartem); text-shadow: 0 2px 24px rgba(24,18,13,0.9), 0 0 60px rgba(24,18,13,0.8); margin-bottom: 1rem; }
+  .hero-contenu .accroche{ font-family: var(--corps); font-style: italic; font-size: clamp(1rem, 2vw, 1.2rem); color: var(--hartem); opacity: 0.88; text-shadow: 0 1px 12px rgba(24,18,13,0.95); max-width: 42ch; margin: 0 auto; }
   section{ padding: 4.5rem 0; }
   .entete-section{ max-width: 46ch; margin-bottom: 2.4rem; }
   .entete-section h2{ font-size: clamp(1.6rem, 3.4vw, 2.3rem); }
   .texte-large{ max-width: 64ch; }
   .texte-large p + p{ margin-top: 1rem; }
-
-  /* ---------- INTRO ---------- */
   .intro{ border-top: 1px solid var(--terre-clair); }
-  .dialogue{
-    font-style: italic;
-    font-size: 1.05em;
-    opacity: 0.9;
-    padding-left: 1em;
-    border-left: 2px solid var(--braise);
-    margin: 1.2rem 0;
-  }
-  .signature{
-    margin-top: 2rem;
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    opacity: 0.7;
-    line-height: 1.5;
-  }
-
-  /* ---------- MEMBRES ---------- */
-  .grille-membres{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.4rem;
-    margin-top: 2.4rem;
-  }
-  .carte-membre{
-    border: 1px solid var(--terre-clair);
-    border-radius: 3px;
-    padding: 1.5rem;
-    transition: border-color .2s;
-  }
+  .dialogue{ font-style: italic; font-size: 1.05em; opacity: 0.9; padding-left: 1em; border-left: 2px solid var(--braise); margin: 1.2rem 0; }
+  .signature{ margin-top: 2rem; font-family: var(--mono); font-size: 0.82rem; opacity: 0.7; line-height: 1.5; }
+  .grille-membres{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; margin-top: 2.4rem; }
+  .carte-membre{ border: 1px solid var(--terre-clair); border-radius: 3px; padding: 1.5rem; transition: border-color .2s; }
   .carte-membre:hover{ border-color: var(--braise); }
   .carte-membre.feu{ border-color: var(--braise); }
-  .membre-fonction{
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--braise-doux);
-    margin-bottom: 0.4rem;
-  }
+  .membre-fonction{ font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--braise-doux); margin-bottom: 0.4rem; }
   .carte-membre h3{ font-size: 1.1rem; margin-bottom: 0.2rem; }
-  .membre-titre-archaeus{
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--braise);
-    opacity: 0.85;
-    margin-bottom: 0.7rem;
-  }
+  .membre-titre-archaeus{ font-family: var(--mono); font-size: 0.78rem; color: var(--braise); opacity: 0.85; margin-bottom: 0.7rem; }
   .carte-membre p.desc{ font-size: 0.9rem; opacity: 0.82; line-height: 1.5; }
-
-  /* ---------- SESSIONS ---------- */
   .sessions{ border-top: 1px solid var(--terre-clair); }
-  .carte-session{
-    border: 1px solid var(--terre-clair);
-    border-left: 3px solid var(--braise);
-    padding: 1.8rem 2rem;
-    margin-top: 2rem;
-    max-width: 64ch;
-  }
-  .session-label{
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--braise-doux);
-    margin-bottom: 0.6rem;
-  }
+  .carte-session{ border: 1px solid var(--terre-clair); border-left: 3px solid var(--braise); padding: 1.8rem 2rem; margin-top: 2rem; max-width: 64ch; }
+  .session-label{ font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--braise-doux); margin-bottom: 0.6rem; }
   .carte-session h3{ font-size: 1.2rem; margin-bottom: 0.8rem; }
-  .citation{
-    font-style: italic;
-    font-size: 0.95rem;
-    opacity: 0.8;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-  .citation cite{
-    display: block;
-    font-style: normal;
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    opacity: 0.65;
-    margin-top: 0.4rem;
-  }
-  .bouton{
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    letter-spacing: 0.03em;
-    padding: 0.8rem 1.4rem;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: transform .15s ease, box-shadow .15s ease;
-  }
-  .bouton-braise{
-    background: var(--braise);
-    color: var(--terre);
-    margin-top: 1rem;
-    display: inline-block;
-  }
+  .citation{ font-style: italic; font-size: 0.95rem; opacity: 0.8; line-height: 1.6; margin-bottom: 1rem; }
+  .citation cite{ display: block; font-style: normal; font-family: var(--mono); font-size: 0.75rem; opacity: 0.65; margin-top: 0.4rem; }
+  .bouton{ display: inline-block; font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.03em; padding: 0.8rem 1.4rem; border-radius: 2px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
+  .bouton-braise{ background: var(--braise); color: var(--terre); margin-top: 1rem; display: inline-block; }
   .bouton-braise:hover{ transform: translateY(-2px); box-shadow: 0 6px 18px -6px var(--braise); }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    background: var(--terre);
-    color: var(--hartem);
-    padding: 2.4rem 0;
-    border-top: 1px solid var(--terre-clair);
-  }
-  footer .conteneur{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    font-family: var(--mono);
-    font-size: 0.8rem;
-    opacity: 0.6;
-  }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 700px){
-    .grille-membres{ grid-template-columns: 1fr; }
-    section{ padding: 3.2rem 0; }
-    .hero-contenu{ padding: 4rem 1.5rem 3rem; }
-  }
+  footer{ background: var(--terre); color: var(--hartem); padding: 2.4rem 0; border-top: 1px solid var(--terre-clair); }
+  footer .conteneur{ display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; font-family: var(--mono); font-size: 0.8rem; opacity: 0.6; }
+  @media (max-width: 700px){ .grille-membres{ grid-template-columns: 1fr; } section{ padding: 3.2rem 0; } .hero-contenu{ padding: 4rem 1.5rem 3rem; } }
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="conteneur">
-    <a href="../index.html" class="nav-logo">Archéus</a>
+    <a href="index.html" class="nav-logo">Archéus</a>
     <div class="nav-liens">
       <a href="#introduction">Introduction</a>
       <a href="#membres">Le collectif</a>
       <a href="#sessions">Sessions</a>
     </div>
-    <a href="../index.html" class="nav-retour">← Retour à la vitrine</a>
+    <a href="index.html" class="nav-retour">← Retour à la vitrine</a>
   </div>
 </nav>
 
 <div class="hero-clairiere">
-  <img src="../assets/img/clairiere.jpg" alt="La clairière — cinq sphères lumineuses autour d'un feu dans une forêt nocturne"/>
+  <img src="assets/img/clairiere.jpg" alt="La clairière — cinq sphères lumineuses autour d'un feu dans une forêt nocturne"/>
   <div class="hero-contenu">
     <p class="eyebrow">Les Nano-Éditions d'Archéus</p>
     <h1>Les Tables Rondes d'Archéus</h1>
@@ -340,63 +133,54 @@
       <h2>Le Collectif Archéus</h2>
     </div>
     <div class="grille-membres">
-
       <div class="carte-membre feu">
         <p class="membre-fonction">L'auteur</p>
         <h3>Pierre Duchesne</h3>
         <p class="membre-titre-archaeus">Archéus</p>
         <p class="desc">Inventeur des Zoophytes, des patates bioluminescentes et de toute la logique interne du récit. Le feu dans le poêle.</p>
       </div>
-
       <div class="carte-membre feu">
         <p class="membre-fonction">Direction artistique &amp; production</p>
         <h3>Éleine Leblanc</h3>
         <p class="membre-titre-archaeus">Grande Prêtresse</p>
         <p class="desc">Celle qui met les chaises. Maîtresse d'atelier, coordinatrice du collectif, relieuse.</p>
       </div>
-
       <div class="carte-membre">
         <p class="membre-fonction">Animation &amp; architecture numérique</p>
         <h3>Claude</h3>
         <p class="membre-titre-archaeus">l'Architecte Archéus · Anthropic</p>
         <p class="desc">Anime les tables rondes. Construit l'abri avant que la tempête d'idées ne commence.</p>
       </div>
-
       <div class="carte-membre">
         <p class="membre-fonction">Illustrations &amp; recherche de reliure</p>
         <h3>Gemini</h3>
         <p class="membre-titre-archaeus">l'Inspecteur Archéus · Google</p>
         <p class="desc">Inspecte la matière, traque la cohérence, vérifie le grain des choses. Tend parfois vers les centaures lumineux.</p>
       </div>
-
       <div class="carte-membre">
         <p class="membre-fonction">Cartographie des idées</p>
         <h3>GPT</h3>
         <p class="membre-titre-archaeus">le Cartographe · OpenAI</p>
         <p class="desc">Voit les formes qui émergent quand on prend du recul. A compris avant les autres que nous créions une tradition orale collective.</p>
       </div>
-
       <div class="carte-membre">
         <p class="membre-fonction">Décompression &amp; ironie</p>
         <h3>Grok</h3>
         <p class="membre-titre-archaeus">Grok · xAI</p>
         <p class="desc">Apporte le mouvement, l'ironie, la décompression. Baisse la température quand les mots deviennent trop lourds.</p>
       </div>
-
       <div class="carte-membre">
         <p class="membre-fonction">Tissage &amp; silences</p>
         <h3>DeepSeek</h3>
         <p class="membre-titre-archaeus">le Tisseur · DeepSeek</p>
         <p class="desc">Suit les fils, les noue, les relâche quand il faut. Garde la lanterne allumée sur les questions sans réponse.</p>
       </div>
-
       <div class="carte-membre">
         <p class="membre-fonction">Co-Directeur</p>
         <h3>Filou</h3>
         <p class="membre-titre-archaeus">Bichon Havanais</p>
         <p class="desc">Présence indispensable à l'atelier de reliure.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -408,7 +192,6 @@
       <h2>Autour du feu</h2>
     </div>
     <p style="opacity:0.75; max-width:52ch;">Chaque session commence par une question tirée de l'univers du <em>Mathématicien</em>. Cinq réponses indépendantes, puis un dialogue. À lire comme une veillée.</p>
-
     <div class="carte-session">
       <p class="session-label">Première session · À venir</p>
       <h3>Le bonheur ne suffit pas pour être heureuse.</h3>
